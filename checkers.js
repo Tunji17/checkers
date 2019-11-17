@@ -1,3 +1,9 @@
+/**
+ * Implements the game logic 
+ * @param {Array} checkersBoard A 2d Array with one X on each row and a single row containing O
+ * @param {Object} jafarData An object containing the row and column position of the single O
+ * @returns {Number} Counter which is the number of X's the O is able to step over following the rules of checkers.
+ */
 const checkersLogic = (checkersBoard, jafarData) => {
   let counter = 0;
   console.log('initial jafar data',jafarData);
@@ -37,6 +43,13 @@ const checkersLogic = (checkersBoard, jafarData) => {
 
 };
 
+/**
+ * Creates an array of size length*length and populates 
+ * it with one X on each row and a single row containing O
+ * @param {Nimber} length size of the array and number of characters in the row string
+ * @returns {Number} numberOfAladdinKills which is the number of X's the O is able to step over following the rules of checkers.
+ */
+
 const checkers = (length) => {
   if (length < 4 || length > 30) {
     console.error('You should supply a length between 4 and 30 ')
@@ -69,9 +82,9 @@ const checkers = (length) => {
     ColumnPosition: jafarRandomPosition,
   };
   const numberOfAladdinKills = checkersLogic(checkersArray, jafarData );
-  console.log('Number of kills is ', numberOfAladdinKills);
+  console.log(`Number of kills is ${numberOfAladdinKills}`);
   console.log(checkersArray);
- 
+  return 
 };
 checkers(2);
 checkers(60);
